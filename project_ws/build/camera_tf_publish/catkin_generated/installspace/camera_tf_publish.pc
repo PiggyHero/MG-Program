@@ -1,0 +1,8 @@
+prefix=/home/piggy/code/project_ws/install
+
+Name: camera_tf_publish
+Description: Description of camera_tf_publish
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

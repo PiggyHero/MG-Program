@@ -1,0 +1,2 @@
+base_link2map_tf:cgo3_camera_link2map_tf:disparity_handle:odom2map_tf:offboard_pkg:visual_landing
+-DCATKIN_DEVEL_PREFIX=/home/piggy/code/project_ws/devel -DCMAKE_INSTALL_PREFIX=/home/piggy/code/project_ws/install -G Unix Makefiles

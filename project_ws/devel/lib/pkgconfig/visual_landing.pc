@@ -1,0 +1,8 @@
+prefix=/home/piggy/code/project_ws/devel
+
+Name: visual_landing
+Description: Description of visual_landing
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

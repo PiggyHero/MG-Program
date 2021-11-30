@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/piggy/piggy_WS/devel -DCMAKE_INSTALL_PREFIX=/home/piggy/piggy_WS/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/piggy/code/project_ws/install
+
+Name: odom2map_tf
+Description: Description of odom2map_tf
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

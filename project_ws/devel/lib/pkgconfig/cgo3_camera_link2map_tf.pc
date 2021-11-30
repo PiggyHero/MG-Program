@@ -1,0 +1,8 @@
+prefix=/home/piggy/code/project_ws/devel
+
+Name: cgo3_camera_link2map_tf
+Description: Description of cgo3_camera_link2map_tf
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

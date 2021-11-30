@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/opt/ros/melodic/include/**",
+        "/home/piggy/code/gaas_ws/src/GAAS/software/Obstacle_Map/include/**",
+        "/home/piggy/code/project_ws/src/camera_tf_publish/include/**",
+        "/home/piggy/code/gaas_ws/src/GAAS/software/SLAM/ygz_slam_ros/Thirdparty/fast/include/**",
+        "/home/piggy/code/gaas_ws/src/offboard_pkg/include/**",
+        "/usr/include/**",
+        "/home/piggy/code/project_ws/src/visual_landing/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

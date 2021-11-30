@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- MAVROS posix SITL environment launch script -->
+    <!-- launches MAVROS, PX4 SITL, Gazebo environment, and spawns vehicle -->
+    <!-- vehicle pose -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.5"/>
+    <arg name="R" default="0"/>
+    <arg name="P" default="0"/>
+    <arg name="Y" default="0"/>
+    <!-- vehicle model and world -->
+    <arg name="est" default="ekf2"/>
+    <arg name="vehicle" default="iris"/>
+    <arg name="world" default="$(find parent_drone)/worlds/smallcity.world"/>
+    <arg name="sdf" default="$(find parent_drone)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+
+    <!-- gazebo configs -->
+    <arg name="gui" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="false"/>
+    <arg name="paused" default="false"/>
+    <arg name="respawn_gazebo" default="false"/>
+    <!-- MAVROS configs -->
+    <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
+    <arg name="respawn_mavros" default="false"/>
+    <!-- PX4 configs -->
+    <arg name="interactive" default="true"/>
+    <!-- PX4 SITL and Gazebo -->
+    <include file="$(find px4)/launch/posix_sitl.launch">
+        <arg name="x" value="$(arg x)"/>
+        <arg name="y" value="$(arg y)"/>
+        <arg name="z" value="$(arg z)"/>
+        <arg name="R" value="$(arg R)"/>
+        <arg name="P" value="$(arg P)"/>
+        <arg name="Y" value="$(arg Y)"/>
+        <arg name="world" value="$(arg world)"/>
+        <arg name="vehicle" value="$(arg vehicle)"/>
+        <arg name="sdf" value="$(arg sdf)"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="interactive" value="$(arg interactive)"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="respawn_gazebo" value="$(arg respawn_gazebo)"/>
+    </include>
+    <!-- MAVROS -->
+    <include file="$(find mavros)/launch/px4.launch">
+        <!-- GCS link is provided by SITL -->
+        <arg name="gcs_url" value=""/>
+        <arg name="fcu_url" value="$(arg fcu_url)"/>
+        <arg name="respawn_mavros" value="$(arg respawn_mavros)"/>
+    </include>
+
+<!-- tf publish -->
+
+<node pkg="cgo3_camera_link2map_tf" type="cgo3_camera_link2map_tf" name="cgo3_camera_link2map_tf"/>
+
+<node pkg="odom2map_tf" type="odom2map_tf" name="odom2map_tf"/>
+<node pkg="base_link2map_tf" type="base_link2map_tf" name="base_link2map_tf"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 -1.57 0 -1.57 cgo3_camera_link camera_frame"/>
+
+<!-- rviz -->
+<!-- <node pkg="rviz" type="rviz" name="rviz_visual" args="-d $(find parent_drone)/config/rviz.config.rviz"/> -->
+
+<!-- stereo image proc -->
+
+<group ns="/stereo_camera" >   
+    <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc"/>
+</group>
+
+<!-- show image -->
+
+ <node pkg="image_view" type="stereo_view" name="stereo_view">
+         <remap from="stereo" to="/stereo_camera"/>
+        <remap from="image" to="image_rect_color" />
+ </node>
+
+<!-- image handle view -->
+<!-- <node pkg="visual_landing" type="image_handle" name="image_handle"/> -->
+
+
+<!-- rtab-map SLAM -->
+
+<!-- <include file="$(find rtabmap_ros)/launch/stereo_mapping.launch"/> -->
+
+
+</launch>
