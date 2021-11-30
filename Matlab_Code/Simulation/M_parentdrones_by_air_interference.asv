@@ -1,0 +1,12 @@
+x=X_position_by_air_interference.Data;%气动干扰下的位移
+z=Z_position_by_air_interference.Data;
+pitch=pitch_angle_by_air_interference.Data;
+
+figure(3);
+plot(t,10*x,'LineWidth',3);
+
+figure(4);
+plot(t,z,'LineWidth',3);
+
+figure(5);
+plot(t,3*pitch,'LineWidth',3);
