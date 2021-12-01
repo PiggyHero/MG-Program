@@ -1,4 +1,4 @@
-# MasterGraduationProgram
+# Master Graduation Program
 
 ### 1.Introduction
 
@@ -7,6 +7,7 @@
 The main contents include:
 
 - Design of Child-Parent UAV
+- Parent UAV control system design
 - Dynamic analysis of Parent UAV under the influence of Child UAV interference and impact load
 - Landing area search without ground marker
 
