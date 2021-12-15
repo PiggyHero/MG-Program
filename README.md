@@ -23,7 +23,7 @@ The main contents include:
 
 #### 2.1 Child-Parent UAV
 
-![image-20211201015541165](https://gitee.com/piggyhero/pic/raw/master/img/20211215155436.png)
+<img src="https://piggyhero.gitee.io/pic/img/20211216032310.png" alt="image-20211201015541165" style="zoom:50%;" />
 
 
 
@@ -31,25 +31,25 @@ The main contents include:
 
 Height variation of the Parent UAV under aerodynamic disturbance conditions of the Child UAV:
 
-<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215155655.png" alt="Snipaste_2021-12-15_15-56-32" style="zoom:50%;" />
+<img src="https://piggyhero.gitee.io/pic/img/20211216032319.png" alt="Snipaste_2021-12-15_15-56-32" style="zoom: 33%;" />
 
 Altitude variation of the Parent UAV under aerodynamic disturbance conditions of the Child UAV:
 
-<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215155823.png" alt="image-20211215155823453" style="zoom:50%;" />
+<img src="https://piggyhero.gitee.io/pic/img/20211216032329.png" alt="image-20211215155823453" style="zoom: 33%;" />
 
 Height variation of the Parent UAV under impact load conditions of the Child UAV:
 
-<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215160212.png" alt="image-20211215160212331" style="zoom:50%;" />
+<img src="https://piggyhero.gitee.io/pic/img/20211216032334.png" alt="image-20211215160212331" style="zoom: 33%;" />
 
 Altitude variation of the Parent UAV under impact load conditions of the Child UAV:
 
-<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215160340.png" alt="image-20211215160340280" style="zoom:50%;" />
+<img src="https://piggyhero.gitee.io/pic/img/20211216032340.png" alt="image-20211215160340280" style="zoom: 33%;" />
 
 
 
 #### 2.3 Flying Experiment
 
-![image-20211201020207609](https://gitee.com/piggyhero/pic/raw/master/img/20211215155359.png)
+<img src="https://piggyhero.gitee.io/pic/img/20211216032348.png" alt="image-20211201020207609"  />
 
 ![image-20211201020220112](https://gitee.com/piggyhero/pic/raw/master/img/20211215155425.png)
 
