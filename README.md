@@ -1,8 +1,14 @@
-# Master Graduation Program
+## Master Graduation Program
 
 ### 1.Introduction
 
  The title of my Master Program is Research on the Stability Control and  Autonomous Landing of Parent Platform of the Child-Parent UAV. 
+
+When a major disaster occurs, it is critical to conduct a rapid and effective assessment of the disaster area environment. Traditional ground rescue methods have been difficult to meet the actual mission needs, and multi-rotor UAV systems provide a new solution to this type of problem, while the current commercial electric multi-rotor UAVs generally have an endurance time of no more than 30 minutes, and because of the limitations of battery technology, the endurance time of electric multi-rotor UAVs is difficult to be significantly improved. In our work, we design a Child-Parent UAV system based on this, which consists of a Parent UAV and two Child UAV. When going to the mission location, the Parent UAV is used as the main flight carrier, so that it does not need to consume the energy of the Child UAV. Upon arrival at the mission site, the Child UAV is then put into the mission and the Parent UAV can choose its own landing site for landing.
+
+We focus on the interference problem caused by the docking and landing process of the Child UAV and the autonomous landing problem of the Parent UAV in the Child-Parent UAS as the main research object. Based on the PID control method, the control system of the Parent UAV is designed, and the aerodynamic interference and impact load model of the Parent UAV is established by combining the experimental and theoretical methods. The results show that the designed control system can ensure the stable flight of the parent UAV under the interference of the Child UAV. Under the condition of aerodynamic disturbance, the attitude angle of the Parent UAV does not change more than 5° and the horizontal displacement does not change more than 6 cm. Under the condition of shock load disturbance, the attitude angle of the Parent UAV does not change more than 15° and the altitude does not change more than 15 cm.
+
+The design of the landing area search algorithm for the Parent UAV is completed. The algorithm is mainly divided into two stages, the first stage is a rough search, which can search the potential landing area and get a shortest search path according to the area location. The second stage is to score the potential landing area in turn according to the search path, find out the area with higher score for area calculation, and if the area of the area meets the landing requirement, the Parent UAV terminates the search for landing.
 
 The main contents include:
 
@@ -10,6 +16,82 @@ The main contents include:
 - Parent UAV control system design
 - Dynamic analysis of Parent UAV under the influence of Child UAV interference and impact load
 - Landing area search without ground marker
+
+
+
+### 2.Results
+
+#### 2.1 Child-Parent UAV
+
+![image-20211201015541165](https://gitee.com/piggyhero/pic/raw/master/img/20211215155436.png)
+
+
+
+#### 2.2 Dynamic Simulation
+
+Height variation of the Parent UAV under aerodynamic disturbance conditions of the Child UAV:
+
+<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215155655.png" alt="Snipaste_2021-12-15_15-56-32" style="zoom:50%;" />
+
+Altitude variation of the Parent UAV under aerodynamic disturbance conditions of the Child UAV:
+
+<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215155823.png" alt="image-20211215155823453" style="zoom:50%;" />
+
+Height variation of the Parent UAV under impact load conditions of the Child UAV:
+
+<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215160212.png" alt="image-20211215160212331" style="zoom:50%;" />
+
+Altitude variation of the Parent UAV under impact load conditions of the Child UAV:
+
+<img src="https://gitee.com/piggyhero/pic/raw/master/img/20211215160340.png" alt="image-20211215160340280" style="zoom:50%;" />
+
+
+
+#### 2.3 Flying Experiment
+
+![image-20211201020207609](https://gitee.com/piggyhero/pic/raw/master/img/20211215155359.png)
+
+![image-20211201020220112](https://gitee.com/piggyhero/pic/raw/master/img/20211215155425.png)
+
+
+
+#### 2.4 Landing Area Searching
+
+Gazebo world: 
+
+![image-20211216024345539](https://piggyhero.gitee.io/pic/img/20211216024345.png)
+
+Parent UAV:
+
+![image-20211216024555536](https://piggyhero.gitee.io/pic/img/20211216024555.png)
+
+Rough searching of landing area:
+
+![image-20211216024853342](https://piggyhero.gitee.io/pic/img/20211216024853.png)
+
+
+
+Landing area score:
+
+![image-20211216023825658](https://piggyhero.gitee.io/pic/img/20211216023825.png)
+
+![image-20211216023842990](https://piggyhero.gitee.io/pic/img/20211216023843.png)
+
+![image-20211216023909538](https://piggyhero.gitee.io/pic/img/20211216023909.png)
+
+Select landing area:
+
+![image-20211216023939557](https://piggyhero.gitee.io/pic/img/20211216023939.png)
+
+Calculate IOU and generate relating position vector
+
+![image-20211216024201036](https://piggyhero.gitee.io/pic/img/20211216024201.png)
+
+
+
+
+
+### 3.Simulation Environment Configuration
 
 Directory file structure:
 
@@ -19,8 +101,6 @@ Directory file structure:
 - `Matlab_Code`: Matlab and Simulink code
 
 
-
-### 2.Configure simulation environment
 
 **step1:** Install ROS melodic
 
@@ -62,61 +142,4 @@ rosrun disparity_handle disparity_handle
 rosrun visual_landing visual_landing
 ```
 
-### 3.Experiment
-
-![image-20211201020207609](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020207.png)
-
-![image-20211201020220112](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020220.png)
-
-### 4.Results
-
-Child-Parent UAV:
-
-![image-20211201015541165](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201015541.png)
-
-Dynamic simulation structure of Parent UAV:
-
-![image-20211201015654072](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201015654.png)
-
-Height variation of the Parent UAV under aerodynamic disturbance conditions of the Child UAV:
-
-![image-20211201015706851](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201015706.png)
-
-Altitude variation of the Parent UAV under aerodynamic disturbance conditions of the Child UAV:
-
-![image-20211201015713332](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201015713.png)
-
-Height variation of the Parent UAV under impact load conditions of the Child UAV:
-
-![image-20211201020101978](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020102.png)
-
-Altitude variation of the Parent UAV under impact load conditions of the Child UAV:
-
-![image-20211201020118146](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020118.png)
-
-Gazebo world: 
-
-![image-20211201020301588](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020301.png)
-
-Landing area search:
-
-![image-20211201020331868](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020331.png)
-
-![image-20211201020340357](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020340.png)
-
-![image-20211201020353051](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020353.png)
-
-![image-20211201020401519](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020401.png)
-
-![image-20211201020407593](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020407.png)
-
-![image-20211201020422968](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020423.png)
-
-![image-20211201020436289](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020436.png)
-
-Selected landing area:
-
-![image-20211201020505990](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020506.png)
-
-![image-20211201020511938](https://raw.githubusercontent.com/PiggyHero/Blog_Picture/master/20211201020511.png)
-
+### 
