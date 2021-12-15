@@ -79,7 +79,7 @@ Landing area score:
 
 ![image-20211216023909538](https://piggyhero.gitee.io/pic/img/20211216023909.png)
 
-Select landing area:
+Landing area filtering:
 
 ![image-20211216023939557](https://piggyhero.gitee.io/pic/img/20211216023939.png)
 
