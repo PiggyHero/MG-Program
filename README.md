@@ -59,7 +59,7 @@ Altitude variation of the Parent UAV under impact load conditions of the Child U
 
 Gazebo world: 
 
-![image-20211216024345539](https://piggyhero.gitee.io/pic/img/20211216024345.png)
+<img src="https://piggyhero.gitee.io/pic/img/20211216024345.png" alt="image-20211216024345539" style="zoom:67%;" />
 
 Parent UAV:
 
