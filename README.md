@@ -25,7 +25,7 @@ The main contents include:
 
 <img src="https://piggyhero.gitee.io/pic/img/20211216032310.png" alt="image-20211201015541165" style="zoom:50%;" />
 
-
+<img src="README.assets/20211216032310.png" alt="20211216032310" style="zoom:50%;" />
 
 #### 2.2 Dynamic Simulation
 
